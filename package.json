@@ -1,6 +1,6 @@
 {
   "name": "nearley-generator",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Turn a Nearley grammar into an efficient fake-text generator",
   "main": "dist/nearley-generator.min.js",
   "unpkg": "dist/nearley-generator.min.js",
