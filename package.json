@@ -1,0 +1,39 @@
+{
+  "name": "nearley-generator",
+  "version": "1.0.0",
+  "description": "Turn a Nearley grammar into an efficient fake-text generator",
+  "main": "dist/nearley-generator.min.js",
+  "unpkg": "dist/nearley-generator.min.js",
+  "module": "src/NearleyGenerator.js",
+  "jsnext:main": "src/NearleyGenerator.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cemulate/nearley-grammar.git"
+  },
+  "keywords": [
+    "nearley",
+    "cfg",
+    "context free grammar",
+    "fake text",
+    "text generator"
+  ],
+  "author": "Chase Meadors",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/cemulate/nearley-grammar/issues"
+  },
+  "homepage": "https://github.com/cemulate/nearley-grammar#readme",
+  "dependencies": {
+    "randexp": "^0.4.6"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.1",
+    "uglifyjs-webpack-plugin": "^1.1.6",
+    "webpack": "^3.10.0"
+  }
+}
