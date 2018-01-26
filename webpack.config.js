@@ -9,6 +9,7 @@ module.exports = {
   },
   output: {
     filename: 'nearley-generator.min.js',
+    libraryTarget: 'umd',
     path: path.resolve(__dirname, './dist')
   },
   module: {
@@ -20,7 +21,13 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['babel-preset-env']
+            presets: [
+              ['babel-preset-env', {
+                targets: {
+                  browsers: ['last 2 Chrome versions']
+                }
+              }]
+            ]
           }
         }
       }
