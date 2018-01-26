@@ -1,6 +1,6 @@
 {
   "name": "nearley-generator",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Turn a Nearley grammar into an efficient fake-text generator",
   "main": "dist/nearley-generator.min.js",
   "unpkg": "dist/nearley-generator.min.js",
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cemulate/nearley-grammar.git"
+    "url": "git+https://github.com/cemulate/nearley-generator.git"
   },
   "keywords": [
     "nearley",
