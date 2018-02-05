@@ -19,4 +19,10 @@ Using `1.0` means that any production for a every symbol is always equally likel
 Examples
 ========
 
-Coming soon
+This package powers [the mLab](https://cemulate.github.io/the-mlab/), a satire/parody site making fun of [the nLab](https://ncatlab.org/nlab/show/HomePage), a wiki for higher mathematics and category theory. 
+You can view the Nearley grammar powering the site [here](https://github.com/cemulate/the-mlab/blob/master/src/grammar/nlab.ne).
+
+Credit
+========
+
+The algorithm used for generation was heavily inspired by [this article](https://eli.thegreenplace.net/2010/01/28/generating-random-sentences-from-a-context-free-grammar) by Eli Bendersky.
