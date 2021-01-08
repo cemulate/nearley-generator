@@ -27,12 +27,16 @@ export function* squashNames(rules) {
     if (run.length > 0) yield { name: cname, productions: run.map(x => x.production) };
 }
 
-export function randomWeightedChoice(arr, weights) {
+export function randInt(rng, a, b) {
+    return a + Math.floor(rng() * (1 + b - a));
+}
+
+export function randomWeightedChoice(rng, arr, weights) {
     let sum = 0;
     for (let i = 0; i < weights.length; i ++) {
         sum += weights[i];
     }
-    let r = Math.random() * sum;
+    let r = rng() * sum;
     for (let i = 0; i < weights.length; i ++) {
         r -= weights[i];
         if (r < 0) return arr[i];

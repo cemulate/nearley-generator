@@ -1,10 +1,11 @@
-import { randomWeightedChoice, squashLiterals, squashNames } from './util.js';
+import { randomWeightedChoice, randInt, squashLiterals, squashNames } from './util.js';
 import randexp from 'randexp';
 
 export default class NearleyGenerator {
-    constructor(nearleyGrammar) {
+    constructor(nearleyGrammar, rng = null) {
         this.rules = this.optimize(nearleyGrammar.ParserRules);
         this._cFactor = 0.5;
+        this.rng = rng != null ? rng : Math.random.bind();
     }
 
     optimize(rules) {
@@ -46,7 +47,7 @@ export default class NearleyGenerator {
             return Math.pow(this._cFactor, seen);
         });
 
-        let prod = randomWeightedChoice(rule.productions, weights);
+        let prod = randomWeightedChoice(this.rng, rule.productions, weights);
 
         let ret = prod.map(token => {
             if (token.rule) {
@@ -57,7 +58,9 @@ export default class NearleyGenerator {
             } else if (token.literal) {
                 return token.literal;
             } else if (token.regex) {
-                return new randexp(token.regex).gen();
+                let r = new randexp(token.regex);
+                r.randInt = (a, b) => randInt(this.rng, a, b);
+                return r.gen();
             }
         });
 

@@ -16,6 +16,16 @@ g.generate('startSymbol', convergenceFactor);
 The convergence (`0 < convergenceFactor < 1`) determines, roughly, how "deep" the generator will descend into recursive production rules.
 Using `1.0` means that any production for a every symbol is always equally likely, but may produce extremely large strings or take a long time to terminate, whereas using a value like `0.6` or `0.7` discourages following a recursive rule more than two or three levels deep.
 
+Custom PRNG
+========
+By default, the generator uses `Math.random()` for randomness.
+To use a seedable or otherwise custom PRNG, a replacement function for `Math.random` can be passed as an additional argument to the constructor:
+
+```
+let g = new NearleyGenerator(myGrammer, myRandom);
+// myRandom() should return a float in [0, 1)
+```
+
 Examples
 ========
 
